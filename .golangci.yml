@@ -1,0 +1,14 @@
+# https://www.m3tech.blog/entry/golang-way-primer#Meta-Linter-%E3%81%AE%E3%82%B9%E3%82%B9%E3%83%A1
+# see: https://golangci-lint.run/usage/configuration/
+issues:
+  exclude-use-default: false
+
+linters:
+  enable:
+    # - godox  # TODO, FIXME などのコメントの検知, リリース前に有効にする
+    - goimports  # フォーマッタ(go fmt 相当も包含) https://godoc.org/golang.org/x/tools/cmd/goimports
+    - gosec  # セキュリティ系 https://github.com/securego/gosec
+    - noctx  # net/http 系での Context 渡し忘れ https://github.com/sonatard/noctx
+    - nolintlint  # nolint コメント自体の書き方 https://github.com/golangci/golangci-lint/tree/master/pkg/golinters/nolintlint
+    - prealloc  # slice のキャパシティ指定 https://github.com/alexkohler/prealloc
+    - misspell  # typo https://github.com/client9/misspell
